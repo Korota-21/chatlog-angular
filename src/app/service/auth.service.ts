@@ -8,7 +8,7 @@ import * as AppUtil from "../common/app.util"
 })
 export class AuthService {
   private _rootURL = "http://localhost:8000/api/auth"
-user!: IUser;
+  user!: IUser;
   constructor(private _Http: HttpClient) { }
 
   login(userData: { email: string, password: string }): Observable<{ user: IUser, token: string }> {
@@ -24,17 +24,22 @@ user!: IUser;
 
   }
 
-  saveUserData(user: IUser,token: string){
+  saveUserData(user: IUser, token: string) {
     localStorage.setItem(AppUtil.AUTH_TOKEN, token);
     localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
   }
-  logout(){
+  logout() {
     localStorage.removeItem(AppUtil.AUTH_TOKEN);
     localStorage.removeItem(AppUtil.USER_INFO);
   }
-isUserLoggedIn(): boolean {
-  //TODO: Enhance this methid with jwt
-  return !!localStorage.getItem(AppUtil.AUTH_TOKEN);
-}
+  isUserLoggedIn(): boolean {
+    //TODO: Enhance this methid with jwt
+    return !!localStorage.getItem(AppUtil.AUTH_TOKEN);
+  }
+  getUserData(): { user: IUser, token: string } {
+    let user:IUser = JSON.parse(localStorage.getItem(AppUtil.USER_INFO)!);
+    let token:string = localStorage.getItem(AppUtil.AUTH_TOKEN)!;
+    return{user: user, token: token};
+  }
 
 }
