@@ -1,0 +1,37 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { IUser } from '../interfaces/user';
+import { Observable } from 'rxjs';
+import * as AppUtil from "../common/app.util"
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private _rootURL = "http://localhost:8000/api/auth"
+user!: IUser;
+  constructor(private _Http: HttpClient) { }
+
+  login(userData: { email: string, password: string }): Observable<{ user: IUser, token: string }> {
+    return this._Http.post<{ user: IUser, token: string }>(`${this._rootURL}/login`, userData);
+
+  }
+  register(userData: { name: string, email: string, password: string }): Observable<{ user: IUser, token: string }> {
+    return this._Http.post<{ user: IUser, token: string }>(`${this._rootURL}/register`, userData);
+
+  }
+  authUser(user: any): Observable<{ user: IUser }> {
+    return this._Http.post<{ user: IUser }>(`${this._rootURL}/me`, user);
+
+  }
+
+  saveUserData(user: IUser,token: string){
+    localStorage.setItem(AppUtil.AUTH_TOKEN, token);
+    localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
+  this.user = user;
+  }
+isUserLoggedIn(): boolean {
+  //TODO: Enhance this methid with jwt
+  return !!localStorage.getItem(AppUtil.AUTH_TOKEN);
+}
+
+}
