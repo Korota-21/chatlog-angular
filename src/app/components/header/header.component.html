@@ -7,13 +7,13 @@
 
         <!-- Right Side Of Navbar -->
         <div class="row row-cols-auto">
-            <div class="col" *ngIf="!this._AuthService.isUserLoggedIn()">
+            <div class="col" *ngIf="!this._authService.isUserLoggedIn()">
                 <button type="button" routerLink="./login" class="btn btn-outline-light">Login</button>
             </div>
-            <div class="col" *ngIf="!this._AuthService.isUserLoggedIn()">
+            <div class="col" *ngIf="!this._authService.isUserLoggedIn()">
                 <button type="button" routerLink="./register" class="btn btn-warning">Register</button>
             </div>
-            <div class="col" *ngIf="this._AuthService.isUserLoggedIn()">
+            <div class="col" *ngIf="this._authService.isUserLoggedIn()">
                 <button type="button" class="btn btn-warning" (click)="logout()">Logout</button>
             </div>
             <!-- .alert-primary, .alert-secondary, .alert-success, .alert-danger, .alert-warning, .alert-info, .alert-light, .alert-dark -->
