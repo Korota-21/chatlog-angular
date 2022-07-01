@@ -27,7 +27,10 @@ user!: IUser;
   saveUserData(user: IUser,token: string){
     localStorage.setItem(AppUtil.AUTH_TOKEN, token);
     localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
-  this.user = user;
+  }
+  logout(){
+    localStorage.removeItem(AppUtil.AUTH_TOKEN);
+    localStorage.removeItem(AppUtil.USER_INFO);
   }
 isUserLoggedIn(): boolean {
   //TODO: Enhance this methid with jwt

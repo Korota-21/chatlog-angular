@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res=>{
           this._userService.saveUserData(res.user,res.token)
-          this._router.navigate(['./'])
+          this._router.navigate(['./main'])
         },
       (err) => {
         this.showErrorMessage(err.error.message)},

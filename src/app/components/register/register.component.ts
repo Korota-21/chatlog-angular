@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
       this._AuthService.register(
         { 'name': this.name, 'email': this.email, 'password': this.password })
         .subscribe(res => { this._AuthService.saveUserData(res.user,res.token)
-          this._router.navigate(['./'])},
+          this._router.navigate(['./main'])},
         err => this.showErrorMessage(err.error.message)
         )
 
