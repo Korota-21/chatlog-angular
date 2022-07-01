@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../interfaces/user';
+import { IUser } from '../../interfaces/user';
 import { Observable } from 'rxjs';
-import * as AppUtil from "../common/app.util"
+import * as AppUtil from "../../common/app.util"
 @Injectable({
   providedIn: 'root'
 })

@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-import { AuthService } from './service/auth.service';
+import { AuthService } from './services/auth/auth.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
+import { ContactsListComponent } from './components/main/contacts-list/contacts-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MainComponent } from './components/main/main.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    MainComponent
+    MainComponent,
+    ContactsListComponent
   ],
   imports: [
     BrowserModule,

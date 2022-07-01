@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/interfaces/user';
-import { AuthService } from 'src/app/service/auth.service';
-import * as AppUtil from "../../common/app.util"
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
