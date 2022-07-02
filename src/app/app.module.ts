@@ -11,7 +11,9 @@ import { AuthService } from './services/auth/auth.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
-import { ContactsListComponent } from './components/main/contacts-list/contacts-list.component';
+import { ChatListComponent } from './components/main/chat-list/chat-list.component';
+import { ChatComponent } from './components/main/chat/chat.component';
+import { ChatPlacholderComponent } from './components/main/chat-placholder/chat-placholder.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ContactsListComponent } from './components/main/contacts-list/contacts-
     RegisterComponent,
     HomeComponent,
     MainComponent,
-    ContactsListComponent
+    ChatListComponent,
+    ChatComponent,
+    ChatPlacholderComponent
   ],
   imports: [
     BrowserModule,

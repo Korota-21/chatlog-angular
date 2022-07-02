@@ -1,1 +1,17 @@
-<p>main works!</p>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container card text-dark py-2">
+    <div class="row">
+        <div class="col-md-3 align-items-center  h-100">
+            <button type="button" class="btn col-md-12 btn-success my-1 " routerLink="./create">Create New Post</button>
+            <app-chat-list></app-chat-list>
+
+        </div>
+        <div class="col-md-8">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+
+</div>

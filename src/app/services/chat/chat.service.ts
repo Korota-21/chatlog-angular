@@ -23,9 +23,13 @@ export class ChatService {
     return options;
   }
 
-  getUserChatList():Observable<[IChat]>{
+  getUserChatList():Observable<IChat[]>{
     let token = this._authService.getUserData().token;
-    return this._Http.get<[IChat]>(`${this._rootURL}/`,this.authHeader(token) );
+    return this._Http.get<IChat[]>(`${this._rootURL}/`,this.authHeader(token) );
+  }
+  getChat(chatId:string):Observable<IChat>{
+    let token = this._authService.getUserData().token;
+    return this._Http.get<IChat>(`${this._rootURL}/${chatId}`,this.authHeader(token) );
   }
 
 
