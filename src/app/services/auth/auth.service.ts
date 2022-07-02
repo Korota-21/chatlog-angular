@@ -8,7 +8,6 @@ import * as AppUtil from "../../common/app.util"
 })
 export class AuthService {
   private _rootURL = "http://localhost:8000/api/auth"
-  user!: IUser;
   constructor(private _Http: HttpClient) { }
 
   login(userData: { email: string, password: string }): Observable<{ user: IUser, token: string }> {
