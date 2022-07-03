@@ -29,7 +29,7 @@ const appRoutes: Routes = [
 @NgModule({
   providers: [AuthService,AuthGuard],
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: "reload"})
   ],
   exports: [
     RouterModule

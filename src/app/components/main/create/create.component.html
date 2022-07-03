@@ -1,0 +1,33 @@
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create new Chat</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input type="text" [(ngModel)]="email" class="form-control" placeholder="Partner Email" aria-label="Email">
+                </div>
+                <div *ngIf="messageDiv.display" ngClass="alert {{messageDiv.class}}" role="alert">
+                    {{messageDiv.message}}
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //modal auto load
+    $(window).on('load', function() {
+        // $('#exampleModal').modal('show');
+    });
+</script>

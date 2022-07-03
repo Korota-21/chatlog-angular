@@ -14,6 +14,7 @@ import { MainComponent } from './components/main/main.component';
 import { ChatListComponent } from './components/main/chat-list/chat-list.component';
 import { ChatComponent } from './components/main/chat/chat.component';
 import { ChatPlacholderComponent } from './components/main/chat-placholder/chat-placholder.component';
+import { CreateComponent } from './components/main/create/create.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChatPlacholderComponent } from './components/main/chat-placholder/chat-
     MainComponent,
     ChatListComponent,
     ChatComponent,
-    ChatPlacholderComponent
+    ChatPlacholderComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
