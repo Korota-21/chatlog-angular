@@ -1,14 +1,7 @@
-<div class="row px-2">
-    <!-- <a href="#" class="btn btn-success active" role="button" aria-pressed="true">Create a chat</a> -->
-
-
-</div>
-<ul class="list-unstyled list-group mt-2 ">
+<ul class="list-unstyled list-group mt-2 overflow-auto">
 
     <li class="list-group-item p-3" *ngFor="let chat of chats" routerLink='./{{chat._id}}'>
         {{chat.users[0].name}}
 
     </li>
-
-
 </ul>
