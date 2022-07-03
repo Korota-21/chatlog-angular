@@ -13,22 +13,22 @@
                                     <span class="h1 fw-bold mb-0">CHATLOG</span>
                                 </div>
 
-                                <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Create new account</h5>
+                                <h5 class="fw-normal mb-2 pb-3 letter-spacing">Create new account</h5>
                                 <div *ngIf="err" class="alert alert-danger" role="alert">
                                     {{errMessage}}
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example17">name</label>
+                                    <label class="form-label" for="name">name</label>
                                     <input type="text" id="username" name="name" placeholder="name" [(ngModel)]="name" class="form-control form-control-lg" />
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example17">Email address</label>
+                                    <label class="form-label" for="email">Email address</label>
                                     <input type="email" id="email" name="email" placeholder="email" [(ngModel)]="email" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example27">Password</label>
+                                    <label class="form-label" for="password">Password</label>
                                     <input type="password" [(ngModel)]="password" id="password" name="password" placeholder="password" class="form-control form-control-lg" />
 
                                 </div>
