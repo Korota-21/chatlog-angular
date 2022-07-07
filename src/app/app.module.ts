@@ -11,10 +11,16 @@ import { AuthService } from './services/auth/auth.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
-import { ChatListComponent } from './components/main/chat-list/chat-list.component';
-import { ChatComponent } from './components/main/chat/chat.component';
-import { ChatPlacholderComponent } from './components/main/chat-placholder/chat-placholder.component';
 import { CreateComponent } from './components/main/create/create.component';
+import { ChatListComponent } from './components/main/chat-list/chat-list.component';
+import { ChatPlacholderComponent } from './components/main/chat-placholder/chat-placholder.component';
+import { ChatHeaderComponent } from './components/main/chat/chat-header/chat-header.component';
+import { ChatComponent } from './components/main/chat/chat.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatService } from './services/chat/chat.service';
+import { MessageService } from './services/message/message.service';
+import { SocketService } from './services/socket/socket.service';
+const config: SocketIoConfig = { url: 'http://localhost:8000', options: {} };
 
 @NgModule({
   declarations: [
@@ -27,16 +33,20 @@ import { CreateComponent } from './components/main/create/create.component';
     ChatListComponent,
     ChatComponent,
     ChatPlacholderComponent,
-    CreateComponent
+    CreateComponent,
+    ChatHeaderComponent,
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocketIoModule.forRoot(config)
+
   ],
-  providers: [AuthService],
+  providers: [AuthService,ChatService,MessageService,SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

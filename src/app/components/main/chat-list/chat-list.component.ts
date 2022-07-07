@@ -10,23 +10,24 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./chat-list.component.css']
 })
 export class ChatListComponent implements OnInit, OnDestroy {
-  chats!: IChat[]
+  chats: IChat[] = [{
+    _id: "",
+    users:[ {
+      _id: "",
+      email:"",
+      name: "",
+      token: "",
+    }],
+    createdAt: ""
+  }]
   subscribtion!: Subscription;
 
 
   constructor(private _chatService: ChatService, private _authService: AuthService) {
-    this.subscribtion = this._chatService.listChange.subscribe(chatList => {
+    this.getChats()
+    this.subscribtion = this._chatService.listChange.subscribe((chatList: IChat[]) => {
       this.chats = chatList;
     })
-
-    this._chatService.getUserChatList().subscribe(
-      (chatList) => {
-
-        this.chats = this.deleteAuthUser(chatList)
-        console.log(this.chats);
-      }
-    );
-
 
   }
   ngOnDestroy(): void {
@@ -46,5 +47,12 @@ export class ChatListComponent implements OnInit, OnDestroy {
     }
     )
     return chatList
+  }
+  getChats(){
+    this._chatService.getUserChatList().subscribe(
+      (chatList) => {
+        this.chats = this.deleteAuthUser(chatList)
+      }
+    );
   }
 }
