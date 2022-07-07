@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
-import { IChat } from 'src/app/interfaces/chat';
 import { AuthService } from '../auth/auth.service';
-import { ChatService } from '../chat/chat.service';
 import { MessageService } from '../message/message.service';
 @Injectable({
   providedIn: 'root'
