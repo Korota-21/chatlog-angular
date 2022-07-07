@@ -5,13 +5,13 @@
     <div #chatHistory class="chat-history card-body overflow-auto">
         <ul class="m-b-0">
             <li *ngFor="let message of MessageList" class="clearfix">
-                <div *ngIf="message.user !=my_id">
+                <div *ngIf="message.user._id !=my_id">
                     <div class="message other-message float-right shadow-sm"> {{message.message}}</div>
                     <div class="message-data text-right ">
                         <span class="message-data-time float-right">{{message.updatedAt|date}}</span>
                     </div>
                 </div>
-                <div *ngIf="message.user ==my_id">
+                <div *ngIf="message.user._id ==my_id">
                     <div class="message my-message shadow-sm">{{message.message}}</div>
                     <div class="message-data">
                         <span class="message-data-time">{{message.updatedAt |date: 'd/M, h:mm a' }}</span>
