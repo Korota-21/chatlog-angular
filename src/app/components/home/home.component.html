@@ -16,7 +16,7 @@
 
                                     <button type="button" routerLink="./register" aria-pressed="true" class="btn btn-warning mx-2">Register</button>
                                 </div>
-                                <div>
+                                <div *ngIf="_authService.isUserLoggedIn()">
                                     <p>
                                         Hi {{user.name}}
                                     </p>
