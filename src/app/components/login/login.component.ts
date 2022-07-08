@@ -14,8 +14,6 @@ export class LoginComponent implements OnInit {
   errMessage = "";
 
   constructor(private _userService: AuthService,private _router: Router) {
-    this.email ="koroko2@gmail.com"
-    this.password ="koroko123";
    }
 
   ngOnInit(): void {

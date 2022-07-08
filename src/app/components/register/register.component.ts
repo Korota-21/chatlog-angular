@@ -19,9 +19,6 @@ export class RegisterComponent implements OnInit {
     ,private _router: Router) { }
 
   ngOnInit(): void {
-    this.name = "marwa"
-    this.email = "marwa@gmail.com"
-    this.password = "marwa"
   }
 
   submitted() {
